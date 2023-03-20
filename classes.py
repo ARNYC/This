@@ -15,8 +15,10 @@ class Bankacct:
     def enter_debit(self, d_amt):
         self.debit = d_amt
 
+
     def enter_credit(self, c_amt):
         self.credit = c_amt
+
 
     def get_endingBal(self):
         self.ending_bal = (self.beginning_bal + self.credit - self.debit )
@@ -127,8 +129,46 @@ rec1.calcPerimeter()
 rec1.printInfo()
 
 '''
+# Discuss is there anyway not to reset the class definition 
+class Product:
+    def __init__(self, productId):
+        self.productId = str(productId)
+        self.item = ""
+        self.price = 0.00
+        self.purchases= 0
+        self.sales= 0
+        self.balance = 0
 
- 
+    def setItem(self,item):
+        self.item = item
+    
+    def setPurchases(self,purchases):
+        self.purchases = purchases
+        self.balance += purchases #will not work in real life
+
+    def setSales(self,sales):
+        self.getBalance()
+        self.sales = sales
+        self.balance -= sales
+
+    def getBalance(self):
+        print(self.item+" Balance",self.balance)
+
+
+    def printInfo(self):
+        print("ProductId: "+self.productId, "Item: "+self.item, "Balance:",self.balance)
+
+    
+prod1 = Product('S1234')
+prod1.setItem('Shirts')
+prod1.setPurchases(100)
+prod1.setSales(50)
+prod1.printInfo()
+prod1.setPurchases(300)
+prod1.setSales(200)
+prod1.printInfo()
+prod1.getBalance()
+
 
 
 
