@@ -129,7 +129,8 @@ rec1.calcPerimeter()
 rec1.printInfo()
 
 '''
-# Discuss is there anyway not to reset the class definition 
+# I am sure, in real life this needs a database to store the balances. Is there anyway to 
+# replicate that behavior without a database? Just storing the balance amount somewhere?
 class Product:
     def __init__(self, productId):
         self.productId = str(productId)
