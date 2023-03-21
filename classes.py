@@ -128,7 +128,7 @@ rec1.calcArea()
 rec1.calcPerimeter()
 rec1.printInfo()
 
-'''
+''''''
 # I am sure, in real life this needs a database to store the balances. Is there anyway to 
 # replicate that behavior without a database? Just storing the balance amount somewhere?
 class Product:
@@ -163,12 +163,43 @@ class Product:
 prod1 = Product('S1234')
 prod1.setItem('Shirts')
 prod1.setPurchases(100)
-prod1.setSales(50)
+prod1.setSales(100)
 prod1.printInfo()
 prod1.setPurchases(300)
 prod1.setSales(200)
 prod1.printInfo()
 prod1.getBalance()
+'''
+
+class address:
+    def __init__(self, name, addr1,city,state,zipCode,addr2=""):
+        #this taught me that blank default arguments have to be a the end. Wanted to ask how to
+        #do if the middle one can be blank
+
+        self.name = name
+        self.addr1 = addr1
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
+        self.addr2 = addr2
+
+    #def printInfo(self):
+        #print(self.name,self.addr1,self.addr2,self.city,self.state,self.zipCode)
+
+    def printInfo(self):
+        print(self.name,self.addr1,self.getAddr2(),self.city,self.state,self.zipCode)
+
+    def setAddr2(self, addr2):
+        self.addr2 = addr2
+
+    def getAddr2(self):
+        return self.addr2
+
+my_addr = address('Arun R', '11936 N. C. Rd','Charlotte','NC','28277')
+my_addr.printInfo()
+my_addr.setAddr2 ='Apt 4101'
+my_addr.printInfo()
+
 
 
 
