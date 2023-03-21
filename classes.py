@@ -197,7 +197,7 @@ class address:
 
 my_addr = address('Arun R', '11936 N. C. Rd','Charlotte','NC','28277')
 my_addr.printInfo()
-my_addr.setAddr2 ='Apt 4101'
+my_addr.setAddr2('Apt 4101')
 my_addr.printInfo()
 
 
