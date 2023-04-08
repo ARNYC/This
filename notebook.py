@@ -39,7 +39,7 @@ class Notebook:
         self.show_notes(self.notes)
 
     def show_note_by_id(self, id):
-        
+        print("shownote id",id)
         found = False
         for note in self.notes:
             if note.get_id() == id:
@@ -72,12 +72,11 @@ class Notebook:
         # modify the note according to the new memo and the tags
     
     def search_notes(self, s_term):
-        print("search")
         matching_notes = []
         for note in self.notes:
             if note.search_note(s_term):
                 note.show_note() 
-                matching_notes.append(note)
+                matching_notes.append(note.get_id())
         if not matching_notes:
             print('No matching notes found!')
         return matching_notes         
@@ -89,8 +88,8 @@ class Notebook:
 # create a couple of notes
 # add them to the nb
 # scroll through the nb
-nb = Notebook()
-nb.add_note('memo1',['tag1','tag2'])
+#nb = Notebook()
+#nb.add_note('memo1',['tag1','tag2'])
 # nb.add_note('memo2','tag3')
 # nb.scroll()
 # nb.show_note_by_id(2)

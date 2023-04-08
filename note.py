@@ -24,7 +24,7 @@ class Note:
         self.memo = memo
         
     def add_tags(self,tags=[]):
-        print("self_tags, tags-type",type(self.tags), type(tags))# wanted to see what the type this shows
+        print("self_tags, tags-type",type(self.tags), type(tags))
         self.tags.extend(tags)
 
     # given a search term, search memo and tags, see if it contains the search term. If it does,

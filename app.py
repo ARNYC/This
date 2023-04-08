@@ -44,25 +44,32 @@ class App:
 
     def add_note(self):
         memo = input("enter memo for note:")
-        tags = input("Enter tags separated by commas:")
+        tags = input("Enter tags separated by commas:").split(',')
         self.notebook.add_note(memo, tags)
         print("Note added ")
+
 
     def show_notes(self):
         self.notebook.scroll()
 
     def modify_note(self):
-
-            id = int(input('Input note Id to be modified or enter 0 to quit: '))
+            while True:
+                try:
+                    id = int(input('Input note Id to be modified or enter 0 to quit: '))
+                    break
+                except ValueError:
+                    print("Must enter a number greater than 0")
             if id > 0:
                 memo = input('Type in new memo or Press enter ')
-                tags = input('Type in tags separated by comma or Press enter ')
-                if memo > "" or tags >"":
-                    print(tags)
+                tags = input('Type in tags separated by comma or Press enter ').split(',')
+                if memo  or tags :
                     self.notebook.modify_note(id,memo,tags)
 
     def search_note(self):
-        pass
+        s_term = input("Enter the term to find in notes: " )
+        matching_notes = self.notebook.search_notes(s_term)
+        print (f"Note Id#s containing {s_term}:", matching_notes)
+
 
     def quit(self):
         print("Thanks for using the notebook app!")
