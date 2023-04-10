@@ -15,6 +15,11 @@ class Contact:
         # have its own address. etc. How do you plan classes? how do you link them?
         #do you have a class for each table in database?
 
+        #question 2: Doesn't the class always get influenced by how the GUI
+        # id designed?  Is it not easier to design a screen with all attributes
+        # and all get passed with the click of a button (with empty cells passing 
+        # default value of None)?
+
     
     def get_last_name(self):
         return self.last_name
