@@ -45,6 +45,7 @@ class App:
     def add_note(self):
         memo = input("enter memo for note:")
         tags = input("Enter tags separated by commas:").split(',')
+        # validations if any 
         self.notebook.add_note(memo, tags)
         print("Note added ")
 
