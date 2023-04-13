@@ -14,7 +14,7 @@ class Contact:
         return self.email
     
     def get_address(self):
-        return self. address
+        return self.address
     
     def set_address(self,address):
         self.address = address
@@ -22,7 +22,7 @@ class Contact:
     
     def show_contact(self):
         print('Name:',self.name,'\n',
-              'Address:',self.address.street,'\n','Email:',self.email)
+              'Address:',self.address.street,self.address.zip_code,'\n','Email:',self.email)
 
 
     def search_by_email(self,email):

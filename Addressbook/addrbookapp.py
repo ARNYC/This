@@ -1,5 +1,6 @@
 import sys, os
 from addressbook import Addressbook
+from contactFolio import Address
 
 class Addr_book_app:
     def __init__(self):
@@ -37,7 +38,11 @@ class Addr_book_app:
     def add_contact(self):
          name = input('Add Contact: Enter contact name: ')
          email = input('            Enter contact email: ')
+         street = input('            Enter Street Address: ')
+         zip_code = input('            Enter Zip Code: ')    
+         address = Address(street,zip_code)
          self.addressbook.add_contact(name,email)
+         self.addressbook.set_contact_address(name,address)
 
     def set_contact_address(self):
          pass
